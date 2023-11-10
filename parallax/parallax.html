@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Parallax</title>
+    <style>
+        @font-face {
+            font-family: 'Inter';
+            src: url(Inter/static/Inter-Regular.ttf);
+        }
+        * {
+            box-sizing: border-box;
+        }
+        html, body {
+            margin: 0;
+            padding: 0;
+            background-color: black;
+            font-family: 'Inter';
+            height: 100%;
+        }
+        .hero {
+            height: 700px;
+            background-color: aqua;
+        }
+        main {
+            color: whitesmoke;
+            padding: 40px;
+        }
+        
+        h1  {
+            color: beige;
+            font-weight: 200;
+        }
+        p {
+            color: beige;
+            font-weight: 200;
+        }
+        .kuva {
+            width: 100%;
+            background-image: url(images/parallax.png);
+            height: 700px;
+            background-attachment: fixed;
+            background-size: cover;
+        }
+        .kuva2 {
+            width: 100%;
+            background-image: url(images/city.png);
+            height: 700px;
+            background-position: bottom center;
+            background-attachment: fixed;
+            background-size: cover;
+        }
+    </style>
+</head>
+<body>
+    
+    <div class="hero">
+        <div class="kuva"></div>
+
+    </div>
+    <main>
+        <h1>My amazing scroll parallax</h1>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
+             Fuga inventore veritatis atque quia aut vero.
+              Explicabo necessitatibus consectetur numquam illo nostrum 
+              doloremque vitae repellendus dignissimos aliquam. Voluptatibus a animi vel.
+              Lorem ipsum, dolor sit amet consectetur adipisicing elit. 
+              Voluptatibus atque itaque eum dolorem ea sed quia, fuga dolorum et 
+              nobis iure dicta porro nam, corrupti dolore similique dolor sit sapiente?
+        </p>
+        <div class="hero">
+            <div class="kuva2"></div>
+        </div>
+    </main>
+
+
+</body>
+</html>
