@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap"
+      rel="stylesheet"
+    />
+    <title>Animointi / Duck hunt</title>
+    <style>
+      html,
+      body {
+        min-height: 100vh;
+        font-family: 'Press Start 2P', cursive;
+      }
+
+      main {
+        max-width: 800px;
+        margin: auto;
+      }
+
+      h1 {
+        color: black;
+        transition: all 1s;
+        /*transition-delay: 1s;*/
+        transition-timing-function: ease-in-out;
+      }
+      h1:hover {
+        transform: rotate(20deg);
+        color: blueviolet;
+      }
+
+      #stage {
+        background-color: aqua;
+        width: 800px;
+        height: 400px;
+        background-image: url(stage.png);
+        background-size: contain;
+        position: relative;
+
+      }
+
+      #doggo {
+        width: calc(600px / 5);
+        height: 110px;
+        background: url(sprite.png);
+        /*background-color: aquamarine;*/
+
+        /* Positiointi */
+        left: 0px;
+        bottom: 50px;
+        background-position: 0px 0px;
+        position: absolute;
+
+        /* animaation ominaisuudet 
+        animation-name: doggowalk;
+        animation-duration: 2s;*/
+
+        /* Hyppää aina ekaan frameen, voi muuttaa 
+        animation-fill-mode: forwards;*/
+
+        /* Kuinka monta kertaa animaatio pyöritetään 
+        animation-iteration-count: 4;*/
+
+        /* Animaation suunta 
+        animation-direction: normal;*/
+
+        /* Animaation tyyppi / nopeus 
+        animation-timing-function: normal;*/
+
+        /* Animaation viive 
+        animation-delay: 1s;*/
+
+        animation-name: doggowalk;
+        animation-duration: 500ms;
+        animation-timing-function: steps(5);
+        animation-iteration-count: infinite;
+
+      }
+
+      @keyframes doggowalk {
+        from {
+            background-position: 0px 0px;
+        }
+        to {
+            /* Tämä vaihdettava kun steps */
+            /*background-position: -480px 0px;*/
+            background-position: -600px 0px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <h1>Duckhunt Stage</h1>
+
+      <p>
+        Duck Hunt is a fantastic arcade game that takes inspiration from the original classic
+        available on Nintendo game systems. You must shoot the moving ducks down with your mouse and
+        see how many points you can score. The hunting is fun and the controls to aim and fire your
+        weapon are simple to master. The graphics are reminiscent of early Nintendo consoles and the
+        gameplay really is fun. Be sure to avoid shooting your faithful dog, and aim your weapon
+        fast!
+      </p>
+
+      <div id="stage">
+        <div id="doggo"></div>
+        <div id="bird1"></div>
+        <div id="bird2"></div>
+      </div>
+      <div id="console">
+        <div class="console" id="bullets"></div>
+        <div class="console" id="hits"></div>
+        <div class="console" id="points"></div>
+      </div>
+      <div id="output"></div>
+    </main>
+  </body>
+</html>
