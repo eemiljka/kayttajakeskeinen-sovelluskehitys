@@ -114,8 +114,12 @@
             background-position: -360 0px;
         }
         100% {
-            background-position: -600px 0px;
+            background-position: -480px 0px;
         }
+      }
+
+      .pause {
+        animation-play-state: paused;
       }
     </style>
   </head>
@@ -144,5 +148,33 @@
       </div>
       <div id="output"></div>
     </main>
+    <script>
+        const element = document.querySelector('#doggo');
+      element.addEventListener('animationstart', listener, false);
+      element.addEventListener('animationend', listener, false);
+      element.addEventListener('animationiteration', listener, false);
+
+      element.addEventListener('click', () => {
+        console.log('Klikkasit koiraa');
+        element.classList.add('pause');
+      });
+
+      function listener(event) {
+        const l = document.createElement('li');
+        console.log(event);
+        switch (event.type) {
+          case 'animationstart':
+            l.textContent = `Started: elapsed time is ${event.elapsedTime}`;
+            break;
+          case 'animationend':
+            l.textContent = `Ended: elapsed time is ${event.elapsedTime}`;
+            break;
+          case 'animationiteration':
+            l.textContent = `New loop started at time ${event.elapsedTime}`;
+            break;
+        }
+        document.getElementById('output').appendChild(l);
+      }
+    </script>
   </body>
 </html>
