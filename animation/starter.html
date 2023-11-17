@@ -75,11 +75,18 @@
         /* Animaation viive 
         animation-delay: 1s;*/
 
-        animation-name: doggowalk;
+        /*animation: name duration timing-function delay iteration-count direction fill-mode;*/
+
+        /*animation-name: doggowalk;
         animation-duration: 500ms;
         animation-timing-function: steps(5);
-        animation-iteration-count: infinite;
+        animation-iteration-count: infinite;*/
 
+        /* Ketjutus */
+        animation: 
+        doggowalk 0.5s steps(5) 6,
+        doggomove 3s linear forwards,
+        doggosniff 0.5s steps(2) 3s 6;
       }
 
       @keyframes doggowalk {
@@ -89,6 +96,24 @@
         to {
             /* Tämä vaihdettava kun steps */
             /*background-position: -480px 0px;*/
+            background-position: -600px 0px;
+        }
+      }
+
+      @keyframes doggomove {
+        0% {
+            left: 0px;
+        }
+        100% {
+            left: 300px;
+        }
+      }
+
+      @keyframes doggosniff {
+        0% {
+            background-position: -360 0px;
+        }
+        100% {
             background-position: -600px 0px;
         }
       }
