@@ -44,6 +44,18 @@
 
       }
 
+      #bird1 {
+        width: 80px;
+        height: 80px;
+        background: url(sprite.png);
+        background-position: 0px -220px;
+        position: absolute;
+        left: 20px;
+        top: 10px;
+        animation: 3s linear forwards;
+        animation: birdflap 1s steps(2) infinite, bird1move 5s linear forwards;
+      }
+
       #doggo {
         width: calc(600px / 5);
         height: 110px;
@@ -117,6 +129,24 @@
             background-position: -480px 0px;
         }
       }
+
+      @keyframes bird1move {
+    0% {
+        left: 20px;
+    }
+    100% {
+        left: calc(100% - 80px); /* Adjust this value based on your needs */
+    }
+}
+    @keyframes birdflap {
+    0% {
+        background-position: 0px -220px;
+    }
+    100% {
+        background-position: -150px -220px;
+    }
+  }
+
 
       .pause {
         animation-play-state: paused;
